@@ -1,0 +1,240 @@
+.shell {
+  display: block;
+  min-height: 100vh;
+}
+.topbar {
+  position: relative;
+  z-index: 5;
+  background: #101720;
+  border-bottom: 1px solid #202b37;
+  padding: 12px clamp(16px, 4vw, 56px) 0;
+}
+.topbar-main {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+.topbar .brand {
+  flex-shrink: 0;
+  padding: 0;
+}
+.topbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+.account-control,
+.theme-placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 38px;
+  border: 1px solid #344250;
+  border-radius: 7px;
+  background: transparent;
+  color: #d7e0e8;
+  padding: 6px 10px;
+  font-size: 11px;
+}
+.account-control:hover {
+  border-color: #b9df8b;
+}
+.account-control .avatar {
+  width: 25px;
+  height: 25px;
+  font-size: 9px;
+}
+.theme-placeholder {
+  color: #8291a0;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+.primary-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  max-width: 1500px;
+  margin: 9px auto 0;
+}
+.topnav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 10px 13px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 7px 7px 0 0;
+  background: transparent;
+  color: #8f9dad;
+  white-space: nowrap;
+  font-size: 11px;
+}
+.topnav-link:hover,
+.topnav-link.active {
+  background: #1c2935;
+  color: #d9edc2;
+}
+.topnav-link.active {
+  border-bottom-color: #b9ed75;
+}
+.main {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 26px clamp(16px, 4.2vw, 64px) 22px;
+}
+.page-header {
+  min-height: 49px;
+}
+.mobilemenu {
+  display: none;
+}
+.studio-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.studio-heading h2 {
+  font: 800 27px Manrope;
+  margin: 12px 0;
+}
+.theme-placeholder:disabled {
+  color: #8291a0;
+}
+.account-control:focus-visible,
+.theme-placeholder:focus-visible,
+.topnav-link:focus-visible,
+.mobilemenu:focus-visible {
+  outline: 2px solid #b9ed75;
+  outline-offset: 2px;
+}
+
+@media (max-width: 1000px) {
+  .topbar {
+    padding-inline: 24px;
+  }
+  .topbar-main {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .topbar-controls {
+    margin-left: auto;
+  }
+  .primary-navigation {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .topnav-link {
+    min-height: 38px;
+    padding-inline: 10px;
+  }
+  .main {
+    padding-inline: 25px;
+  }
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    padding: 10px 15px 0;
+  }
+  .topbar-main {
+    gap: 10px;
+  }
+  .topbar .brand {
+    gap: 8px;
+  }
+  .topbar .brand small {
+    display: none;
+  }
+  .topbar .brandmark {
+    width: 31px;
+    height: 31px;
+  }
+  .topbar .brand b {
+    font-size: 13px;
+  }
+  .mobilemenu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin: 0;
+    border: 1px solid #344250;
+    border-radius: 7px;
+    background: transparent;
+    color: #d7e0e8;
+  }
+  .topbar-controls {
+    gap: 6px;
+  }
+  .account-control,
+  .theme-placeholder {
+    min-height: 36px;
+    padding: 6px 8px;
+  }
+  .account-control {
+    gap: 5px;
+  }
+  .account-control > svg {
+    display: none;
+  }
+  .theme-placeholder span {
+    display: none;
+  }
+  .primary-navigation {
+    display: none;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 3px;
+    margin: 8px 0 0;
+    padding: 8px 0 10px;
+    border-top: 1px solid #202b37;
+  }
+  .primary-navigation.is-open {
+    display: flex;
+  }
+  .topnav-link {
+    justify-content: flex-start;
+    min-height: 42px;
+    border: 0;
+    border-radius: 7px;
+    text-align: left;
+  }
+  .topnav-link.active {
+    box-shadow: inset 3px 0 #b9ed75;
+  }
+  .main {
+    margin: 0;
+    width: 100%;
+    padding: 22px 15px;
+  }
+  .page-header {
+    margin-bottom: 20px;
+  }
+  .page-header .eyebrow {
+    font-size: 8px;
+  }
+  .page-header h1 {
+    font-size: 21px;
+  }
+  .header-right {
+    margin-left: 8px;
+  }
+  .studio-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .studio-heading .outline {
+    padding: 9px 11px;
+  }
+}

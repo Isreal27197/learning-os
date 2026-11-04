@@ -1,0 +1,330 @@
+.daily-workspace {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 13px;
+  max-width: 1420px;
+  margin: 0 auto;
+  min-width: 0;
+}
+.daily-workspace > .panel,
+.daily-workspace > .daily-feedback,
+.daily-workspace > .daily-warning {
+  min-width: 0;
+  margin: 0;
+}
+.daily-overview,
+.daily-focus,
+.daily-tasks,
+.daily-clock,
+.daily-reflection,
+.daily-review,
+.daily-history {
+  padding: clamp(15px, 2.4vw, 22px);
+}
+.daily-overview,
+.daily-review,
+.daily-history,
+.daily-feedback,
+.daily-warning {
+  grid-column: 1 / -1;
+}
+.daily-date h2,
+.daily-heading h2,
+.daily-focus h2,
+.daily-reflection h2,
+.daily-review h2,
+.daily-history h2 {
+  margin: 5px 0 12px;
+  font: 700 17px Manrope;
+  overflow-wrap: anywhere;
+}
+.daily-date .eyebrow {
+  line-height: 1.6;
+}
+.daily-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  margin: 16px 0;
+}
+.daily-metrics > div {
+  display: grid;
+  gap: 5px;
+  border: 1px solid #2d3b47;
+  border-radius: 7px;
+  background: #101821;
+  padding: 11px;
+}
+.daily-metrics b {
+  color: #c5e99a;
+  font: 700 18px Manrope;
+  overflow-wrap: anywhere;
+}
+.daily-metrics span,
+.daily-task small,
+.daily-session-list small {
+  color: #8f9eaa;
+  font-size: 10px;
+}
+.daily-workspace label {
+  display: grid;
+  gap: 6px;
+  color: #c5d0d8;
+  font-size: 11px;
+  margin: 12px 0;
+}
+.daily-workspace input,
+.daily-workspace textarea,
+.daily-workspace select {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #34424e;
+  border-radius: 6px;
+  background: #0e161e;
+  color: #e2e8ee;
+  font-size: 12px;
+  line-height: 1.55;
+  padding: 9px 10px;
+}
+.daily-workspace textarea {
+  resize: vertical;
+}
+.daily-workspace input:focus,
+.daily-workspace textarea:focus,
+.daily-workspace select:focus {
+  outline: 2px solid #a9ce83;
+  outline-offset: 1px;
+}
+.daily-workspace :disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.daily-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.daily-heading h2,
+.daily-session-heading h3 {
+  margin-bottom: 0;
+}
+.daily-heading > b {
+  color: #c5e99a;
+  font-size: 11px;
+}
+.daily-next-action {
+  border-left: 3px solid #b9ed75;
+  border-radius: 4px;
+  background: #17231d;
+  padding: 10px 12px;
+}
+.daily-next-action b {
+  color: #c5e99a;
+  font-size: 10px;
+}
+.daily-next-action p {
+  margin: 5px 0 0;
+  color: #d3ddd4;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.daily-task-list,
+.daily-session-list {
+  display: grid;
+  gap: 9px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.daily-task {
+  min-width: 0;
+  border: 1px solid #2d3b47;
+  border-left: 3px solid #74879a;
+  border-radius: 7px;
+  background: #151f29;
+  padding: 11px;
+}
+.daily-task.in-progress {
+  border-left-color: #e6bd68;
+}
+.daily-task.completed {
+  border-left-color: #a9ce83;
+  background: #17231d;
+}
+.daily-task.skipped {
+  border-left-color: #9c7777;
+  opacity: 0.82;
+}
+.daily-task-main > div,
+.daily-task-links {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 9px;
+}
+.daily-task-main > div b {
+  min-width: 0;
+  color: #d7e0e8;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.daily-task-main p {
+  color: #9aa8b4;
+  font-size: 11px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.daily-task-main > small {
+  display: block;
+}
+.daily-task > label {
+  max-width: 240px;
+}
+.daily-task > label select {
+  padding: 6px 8px;
+  font-size: 11px;
+}
+.daily-task-links {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  border-top: 1px solid #2d3b47;
+  margin-top: 8px;
+  padding-top: 7px;
+}
+.daily-task-links .textbtn {
+  max-width: 100%;
+  padding: 3px 0;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.daily-clock-face {
+  color: #d7e0e8;
+  font: 500 clamp(32px, 6vw, 48px) 'DM Mono';
+  letter-spacing: 0.04em;
+  margin: 18px 0;
+  text-align: center;
+}
+.daily-clock-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.daily-session-heading {
+  border-top: 1px solid #26323e;
+  margin: 22px 0 10px;
+  padding-top: 13px;
+}
+.daily-session-heading h3 {
+  font: 700 14px Manrope;
+}
+.daily-session-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid #26323e;
+  padding: 10px 0;
+}
+.daily-session-list li > span {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.daily-session-list b {
+  color: #c5d0d8;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.daily-session-list strong {
+  color: #c5e99a;
+  font: 11px 'DM Mono';
+  white-space: nowrap;
+}
+.daily-review-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+}
+.daily-review-grid > div {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  border-top: 1px solid #2d3b47;
+  padding-top: 9px;
+  min-width: 0;
+}
+.daily-review-grid b,
+.daily-review-reflections b {
+  color: #c5d0d8;
+  font-size: 10px;
+}
+.daily-review-grid span,
+.daily-review-reflections span {
+  color: #8f9eaa;
+  font-size: 10px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.daily-review-reflections {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px 16px;
+  margin-top: 14px;
+}
+.daily-review-reflections p {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+}
+.daily-history .diaryentry {
+  margin-top: 9px;
+}
+.daily-feedback,
+.daily-warning {
+  border: 1px solid #40573b;
+  border-radius: 7px;
+  background: #1a251b;
+  color: #c5e99a;
+  font-size: 11px;
+  line-height: 1.6;
+  padding: 10px 12px;
+}
+.daily-warning {
+  border-color: #70553c;
+  background: #2a2119;
+  color: #f0c99e;
+}
+@media (max-width: 700px) {
+  .daily-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .daily-workspace > * {
+    grid-column: 1;
+  }
+  .daily-metrics {
+    gap: 6px;
+  }
+  .daily-metrics > div {
+    padding: 8px;
+  }
+  .daily-metrics b {
+    font-size: 15px;
+  }
+  .daily-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .daily-review-grid,
+  .daily-review-reflections {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .daily-clock-actions > button {
+    flex: 1;
+    justify-content: center;
+  }
+}

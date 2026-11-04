@@ -1,0 +1,320 @@
+.career-workspace {
+  display: grid;
+  gap: 13px;
+  max-width: 1420px;
+  min-width: 0;
+  margin: 0 auto;
+}
+.career-workspace > .panel,
+.career-workspace > p {
+  min-width: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.career-intro,
+.career-section {
+  padding: clamp(15px, 2.4vw, 23px);
+}
+.career-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.career-intro h2,
+.career-heading h2 {
+  margin: 5px 0 8px;
+  font: 700 18px Manrope;
+}
+.career-intro p,
+.career-helper {
+  color: #9aa8b4;
+  font-size: 11px;
+  line-height: 1.65;
+  max-width: 850px;
+}
+.career-local-tag,
+.career-count {
+  border: 1px solid #34424e;
+  border-radius: 999px;
+  color: #9baab5;
+  font-size: 9px;
+  padding: 6px 9px;
+  white-space: nowrap;
+}
+.career-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 13px;
+}
+.career-heading h2 {
+  margin-bottom: 0;
+  font-size: 16px;
+}
+.career-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 13px;
+}
+.career-workspace label {
+  display: grid;
+  gap: 6px;
+  color: #c5d0d8;
+  font-size: 11px;
+  margin: 10px 0;
+  min-width: 0;
+}
+.career-workspace input,
+.career-workspace textarea,
+.career-workspace select {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #34424e;
+  border-radius: 6px;
+  background: #0e161e;
+  color: #e2e8ee;
+  font-size: 12px;
+  line-height: 1.55;
+  padding: 9px 10px;
+}
+.career-workspace textarea {
+  resize: vertical;
+}
+.career-workspace input:focus,
+.career-workspace textarea:focus,
+.career-workspace select:focus {
+  outline: 2px solid #a9ce83;
+  outline-offset: 1px;
+}
+.career-workspace :disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.career-form-wide {
+  grid-column: 1 / -1;
+}
+.career-feedback,
+.career-warning {
+  border: 1px solid #40573b;
+  border-radius: 7px;
+  background: #1a251b;
+  color: #c5e99a;
+  font-size: 11px;
+  line-height: 1.6;
+  padding: 10px 12px;
+}
+.career-warning {
+  border-color: #70553c;
+  background: #2a2119;
+  color: #f0c99e;
+}
+.career-helper {
+  margin: -4px 0 13px;
+}
+.career-skill-categories {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+}
+.career-skill-category {
+  min-width: 0;
+  border: 1px solid #26323e;
+  border-radius: 8px;
+  background: #101821;
+  padding: 11px;
+}
+.career-skill-category > h3 {
+  color: #c5e99a;
+  font: 700 12px Manrope;
+  margin: 0 0 8px;
+}
+.career-skill {
+  min-width: 0;
+  border-top: 1px solid #26323e;
+  padding: 8px 0;
+}
+.career-skill-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.career-skill-head b {
+  color: #d7e0e8;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.career-skill-status,
+.career-record-type {
+  display: inline-flex;
+  border: 1px solid #3c4a56;
+  border-radius: 999px;
+  color: #aebac4;
+  font-size: 9px;
+  padding: 4px 7px;
+  text-transform: capitalize;
+}
+.career-skill-status.learning,
+.career-record-type.preparing,
+.career-record-type.assessment {
+  border-color: #75643d;
+  color: #e4c57f;
+}
+.career-skill-status.practicing,
+.career-record-type.applied,
+.career-record-type.interview {
+  border-color: #485e75;
+  color: #a9c6e0;
+}
+.career-skill-status.demonstrated,
+.career-record-type.offer,
+.career-record-type.completed {
+  border-color: #526743;
+  color: #c5e99a;
+}
+.career-record-type.rejected,
+.career-record-type.withdrawn {
+  border-color: #76534c;
+  color: #efad98;
+}
+.career-skill label {
+  margin: 7px 0;
+  font-size: 10px;
+}
+.career-skill textarea,
+.career-skill select {
+  padding: 7px 8px;
+  font-size: 10px;
+}
+.career-links,
+.career-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.career-links .textbtn {
+  padding: 3px 0;
+  font-size: 9px;
+}
+.career-save-skill {
+  padding: 6px 9px;
+  font-size: 9px;
+}
+.career-editor {
+  border: 1px solid #26323e;
+  border-radius: 8px;
+  background: #101821;
+  margin-bottom: 13px;
+  padding: 13px;
+}
+.career-editor > h3 {
+  color: #d2dbe3;
+  font: 700 13px Manrope;
+  margin: 0;
+}
+.career-actions {
+  margin-top: 8px;
+}
+.career-record-list {
+  display: grid;
+  gap: 8px;
+}
+.career-record {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1px solid #2d3b47;
+  border-radius: 7px;
+  background: #111a23;
+  padding: 11px;
+}
+.career-record > div:first-child {
+  min-width: 0;
+}
+.career-record h3 {
+  color: #d7e0e8;
+  font: 700 12px Manrope;
+  margin: 7px 0 4px;
+  overflow-wrap: anywhere;
+}
+.career-record p,
+.career-record small {
+  display: block;
+  color: #96a4b0;
+  font-size: 10px;
+  line-height: 1.6;
+  margin: 4px 0;
+  overflow-wrap: anywhere;
+}
+.career-record a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #c5e99a;
+  font-size: 10px;
+  margin-top: 6px;
+  overflow-wrap: anywhere;
+}
+.career-record-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex: 0 0 auto;
+}
+.career-record-actions .textbtn {
+  font-size: 10px;
+}
+.career-status-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 7px;
+  margin-bottom: 13px;
+}
+.career-status-summary > div {
+  display: grid;
+  gap: 4px;
+  border: 1px solid #2d3b47;
+  border-radius: 6px;
+  background: #101821;
+  padding: 8px;
+}
+.career-status-summary b {
+  color: #c5e99a;
+  font: 700 15px Manrope;
+}
+.career-status-summary span {
+  color: #8f9eaa;
+  font-size: 9px;
+  text-transform: capitalize;
+}
+@media (max-width: 800px) {
+  .career-skill-categories {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .career-intro,
+  .career-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .career-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .career-form-wide {
+    grid-column: 1;
+  }
+  .career-status-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .career-record {
+    flex-direction: column;
+  }
+  .career-record-actions {
+    align-self: flex-end;
+  }
+}

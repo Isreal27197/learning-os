@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title description">
+  <title id="title">Union, intersection and set difference</title>
+  <desc id="description">Three panels show two sets A and B. The union highlights both sets, the intersection highlights only the overlap, and A minus B highlights the part of A outside B.</desc>
+  <defs>
+    <clipPath id="overlapLeft">
+      <circle cx="642" cy="320" r="92"/>
+    </clipPath>
+  </defs>
+  <rect width="1200" height="620" rx="18" fill="#ffffff"/>
+  <text x="52" y="57" fill="#172b3a" font-family="Arial, sans-serif" font-size="30" font-weight="700">Three ways to combine sets</text>
+  <text x="52" y="88" fill="#405565" font-family="Arial, sans-serif" font-size="18">A = {1, 2, 4} and B = {2, 3}</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="45" y="112" width="350" height="445" rx="14" fill="#f3f8fc" stroke="#a8bdc9" stroke-width="2"/>
+    <rect x="425" y="112" width="350" height="445" rx="14" fill="#f3f8fc" stroke="#a8bdc9" stroke-width="2"/>
+    <rect x="805" y="112" width="350" height="445" rx="14" fill="#f3f8fc" stroke="#a8bdc9" stroke-width="2"/>
+    <text x="220" y="151" fill="#172b3a" text-anchor="middle" font-size="22" font-weight="700">Union: A ∪ B</text>
+    <text x="600" y="151" fill="#172b3a" text-anchor="middle" font-size="22" font-weight="700">Intersection: A ∩ B</text>
+    <text x="980" y="151" fill="#172b3a" text-anchor="middle" font-size="22" font-weight="700">Difference: A \ B</text>
+  </g>
+
+  <g>
+    <circle cx="180" cy="320" r="92" fill="#72b7a0" fill-opacity="0.8"/>
+    <circle cx="262" cy="320" r="92" fill="#f2bc70" fill-opacity="0.8"/>
+    <circle cx="560" cy="320" r="92" fill="#d9e3e8"/>
+    <circle cx="642" cy="320" r="92" fill="#d9e3e8"/>
+    <circle cx="560" cy="320" r="92" fill="#72b7a0" clip-path="url(#overlapLeft)"/>
+    <circle cx="940" cy="320" r="92" fill="#72b7a0"/>
+    <circle cx="1022" cy="320" r="92" fill="#d9e3e8"/>
+  </g>
+  <g fill="none" stroke="#405565" stroke-width="2">
+    <circle cx="180" cy="320" r="92"/><circle cx="262" cy="320" r="92"/>
+    <circle cx="560" cy="320" r="92"/><circle cx="642" cy="320" r="92"/>
+    <circle cx="940" cy="320" r="92"/><circle cx="1022" cy="320" r="92"/>
+  </g>
+  <g fill="#172b3a" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">
+    <text x="155" y="316">1, 4</text><text x="220" y="325">2</text><text x="286" y="316">3</text>
+    <text x="535" y="316">1, 4</text><text x="600" y="325">2</text><text x="666" y="316">3</text>
+    <text x="915" y="316">1, 4</text><text x="980" y="325">2</text><text x="1046" y="316">3</text>
+  </g>
+  <g fill="#405565" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">
+    <text x="180" y="225">A</text><text x="262" y="225">B</text>
+    <text x="560" y="225">A</text><text x="642" y="225">B</text>
+    <text x="940" y="225">A</text><text x="1022" y="225">B</text>
+  </g>
+  <g fill="#172b3a" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">
+    <text x="220" y="468">{1, 2, 3, 4}</text>
+    <text x="600" y="468">{2}</text>
+    <text x="980" y="468">{1, 4}</text>
+  </g>
+  <g fill="#405565" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">
+    <text x="220" y="495">in A or B</text>
+    <text x="600" y="495">in both A and B</text>
+    <text x="980" y="495">in A, but not B</text>
+  </g>
+</svg>

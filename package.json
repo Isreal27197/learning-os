@@ -1,0 +1,33 @@
+{
+  "name": "learning-os",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "predev": "npm run generate:outline",
+    "dev": "vite",
+    "prebuild": "npm run check:outline",
+    "build": "tsc -b && vite build",
+    "generate:outline": "node scripts/generate-outline.mjs",
+    "check:outline": "node scripts/generate-outline.mjs --check",
+    "preview": "vite preview",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.0",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "prettier": "^3.9.10",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
+  }
+}

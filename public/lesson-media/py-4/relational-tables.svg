@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title description">
+  <title id="title">Relational study tables and keys</title>
+  <desc id="description">A subjects table and study sessions table show primary keys and a foreign key relationship from study_sessions.subject_id to subjects.subject_id.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#176b54"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="620" rx="18" fill="#ffffff"/>
+  <text x="54" y="58" fill="#172b3a" font-family="Arial, sans-serif" font-size="30" font-weight="700">A one-to-many relationship</text>
+  <text x="54" y="91" fill="#405565" font-family="Arial, sans-serif" font-size="18">One subject can be referenced by many study sessions.</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="55" y="132" width="455" height="420" rx="12" fill="#f3f8fc" stroke="#52758b" stroke-width="2"/>
+    <rect x="55" y="132" width="455" height="56" rx="12" fill="#dcecf4"/>
+    <path d="M55 176 H510" stroke="#52758b" stroke-width="2"/>
+    <text x="78" y="169" fill="#172b3a" font-size="23" font-weight="700">subjects</text>
+    <text x="78" y="218" fill="#405565" font-size="15" font-weight="700">PRIMARY KEY</text>
+    <text x="270" y="218" fill="#405565" font-size="15" font-weight="700">name</text>
+    <path d="M55 232 H510" stroke="#a8bdc9" stroke-width="1.5"/>
+    <text x="78" y="270" fill="#176b54" font-size="18" font-weight="700">1  subject_id</text>
+    <text x="270" y="270" fill="#172b3a" font-size="18">Python</text>
+    <path d="M55 286 H510" stroke="#d1dde3"/>
+    <text x="78" y="324" fill="#176b54" font-size="18" font-weight="700">2  subject_id</text>
+    <text x="270" y="324" fill="#172b3a" font-size="18">SQL</text>
+    <path d="M55 340 H510" stroke="#d1dde3"/>
+    <text x="78" y="378" fill="#176b54" font-size="18" font-weight="700">3  subject_id</text>
+    <text x="270" y="378" fill="#172b3a" font-size="18">Statistics</text>
+    <rect x="72" y="410" width="420" height="90" rx="8" fill="#e5f3ed"/>
+    <text x="90" y="443" fill="#176b54" font-size="17" font-weight="700">PK = primary key</text>
+    <text x="90" y="473" fill="#405565" font-size="16">Identifies each subject row uniquely.</text>
+
+    <rect x="690" y="132" width="455" height="420" rx="12" fill="#f3f8fc" stroke="#52758b" stroke-width="2"/>
+    <rect x="690" y="132" width="455" height="56" rx="12" fill="#dcecf4"/>
+    <path d="M690 176 H1145" stroke="#52758b" stroke-width="2"/>
+    <text x="714" y="169" fill="#172b3a" font-size="23" font-weight="700">study_sessions</text>
+    <text x="714" y="218" fill="#405565" font-size="14" font-weight="700">session_id (PK)</text>
+    <text x="860" y="218" fill="#405565" font-size="14" font-weight="700">subject_id (FK)</text>
+    <text x="1020" y="218" fill="#405565" font-size="14" font-weight="700">minutes</text>
+    <path d="M690 232 H1145" stroke="#a8bdc9" stroke-width="1.5"/>
+    <text x="714" y="270" fill="#172b3a" font-size="17">101</text>
+    <text x="860" y="270" fill="#b55b13" font-size="17" font-weight="700">1</text>
+    <text x="1020" y="270" fill="#172b3a" font-size="17">30</text>
+    <path d="M690 286 H1145" stroke="#d1dde3"/>
+    <text x="714" y="324" fill="#172b3a" font-size="17">102</text>
+    <text x="860" y="324" fill="#b55b13" font-size="17" font-weight="700">2</text>
+    <text x="1020" y="324" fill="#172b3a" font-size="17">25</text>
+    <path d="M690 340 H1145" stroke="#d1dde3"/>
+    <text x="714" y="378" fill="#172b3a" font-size="17">103</text>
+    <text x="860" y="378" fill="#b55b13" font-size="17" font-weight="700">2</text>
+    <text x="1020" y="378" fill="#172b3a" font-size="17">15</text>
+    <rect x="708" y="410" width="420" height="90" rx="8" fill="#fff1df"/>
+    <text x="726" y="443" fill="#9b4c0d" font-size="17" font-weight="700">FK = foreign key</text>
+    <text x="726" y="473" fill="#405565" font-size="16">References subjects.subject_id.</text>
+  </g>
+  <path d="M875 282 C770 250 640 250 516 282" fill="none" stroke="#176b54" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="570" y="235" fill="#176b54" font-family="Arial, sans-serif" font-size="16" font-weight="700">references</text>
+</svg>

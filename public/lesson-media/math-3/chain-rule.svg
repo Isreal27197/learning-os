@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title description">
+  <title id="title">Chain rule through composed functions</title>
+  <desc id="description">A computation graph maps x to u equals x squared, then u to y equals 3u plus 1. At x equals 2, u equals 4 and y equals 13. The local derivatives are du by dx equals 4 and dy by du equals 3, so dy by dx equals 12.</desc>
+  <rect width="1200" height="560" rx="18" fill="#ffffff"/>
+  <text x="54" y="58" fill="#172b3a" font-family="Arial, sans-serif" font-size="30" font-weight="700">The chain rule follows composed computations</text>
+  <text x="54" y="94" fill="#405565" font-family="Arial, sans-serif" font-size="19">If y = g(u) and u = f(x), then dy/dx = (dy/du)(du/dx).</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="80" y="205" width="210" height="145" rx="18" fill="#eaf3fb" stroke="#245e9b" stroke-width="3"/>
+    <text x="185" y="250" text-anchor="middle" fill="#172b3a" font-size="23" font-weight="700">Input</text>
+    <text x="185" y="295" text-anchor="middle" fill="#245e9b" font-size="25">x = 2</text>
+    <rect x="405" y="205" width="250" height="145" rx="18" fill="#e5f3ed" stroke="#176b54" stroke-width="3"/>
+    <text x="530" y="250" text-anchor="middle" fill="#172b3a" font-size="23" font-weight="700">u = f(x) = x²</text>
+    <text x="530" y="295" text-anchor="middle" fill="#176b54" font-size="25">u = 4, du/dx = 4</text>
+    <rect x="785" y="205" width="300" height="145" rx="18" fill="#fff1df" stroke="#b55b13" stroke-width="3"/>
+    <text x="935" y="250" text-anchor="middle" fill="#172b3a" font-size="23" font-weight="700">y = g(u) = 3u + 1</text>
+    <text x="935" y="295" text-anchor="middle" fill="#9b4c0d" font-size="25">y = 13, dy/du = 3</text>
+    <path d="M290 278 H390" stroke="#405565" stroke-width="4"/>
+    <path d="M390 278 L374 267 M390 278 L374 289" stroke="#405565" stroke-width="4"/>
+    <path d="M655 278 H770" stroke="#405565" stroke-width="4"/>
+    <path d="M770 278 L754 267 M770 278 L754 289" stroke="#405565" stroke-width="4"/>
+  </g>
+  <rect x="170" y="415" width="860" height="82" rx="14" fill="#f3f8fc" stroke="#52758b" stroke-width="2"/>
+  <text x="600" y="452" text-anchor="middle" fill="#172b3a" font-family="Arial, sans-serif" font-size="22" font-weight="700">dy/dx = (dy/du)(du/dx) = 3 × 4 = 12</text>
+  <text x="600" y="480" text-anchor="middle" fill="#405565" font-family="Arial, sans-serif" font-size="16">Multiply the local rates along the path from input to output.</text>
+</svg>

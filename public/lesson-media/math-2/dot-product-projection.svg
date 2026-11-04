@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title description">
+  <title id="title">Dot product and projection onto a horizontal vector</title>
+  <desc id="description">Vector u equals (3, 2), vector v equals (1, 0), and the projection of u onto v is (3, 0). The remaining perpendicular component is (0, 2).</desc>
+  <defs>
+    <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0 L12 6 L0 12 Z" fill="#245e9b"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0 L12 6 L0 12 Z" fill="#176b54"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0 L12 6 L0 12 Z" fill="#b55b13"/>
+    </marker>
+    <pattern id="grid" width="70" height="70" patternUnits="userSpaceOnUse">
+      <path d="M70 0 H0 V70" fill="none" stroke="#d8e2e8" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="620" rx="18" fill="#ffffff"/>
+  <text x="54" y="58" fill="#172b3a" font-family="Arial, sans-serif" font-size="30" font-weight="700">A dot product measures alignment</text>
+  <text x="54" y="92" fill="#405565" font-family="Arial, sans-serif" font-size="19">Project u onto v to keep only the component in v’s direction.</text>
+  <rect x="70" y="125" width="700" height="420" fill="url(#grid)" stroke="#a8bdc9" stroke-width="2"/>
+  <path d="M140 475 H700 M140 475 V195" stroke="#405565" stroke-width="2"/>
+  <g fill="#405565" font-family="Arial, sans-serif" font-size="15" text-anchor="middle">
+    <text x="140" y="501">0</text>
+    <text x="210" y="501">1</text>
+    <text x="350" y="501">3</text>
+    <text x="119" y="335">2</text>
+  </g>
+  <path d="M140 475 L350 335" stroke="#245e9b" stroke-width="6" fill="none" marker-end="url(#arrow-blue)"/>
+  <path d="M140 475 L210 475" stroke="#245e9b" stroke-width="4" fill="none" marker-end="url(#arrow-blue)"/>
+  <path d="M140 475 L350 475" stroke="#176b54" stroke-width="6" fill="none" marker-end="url(#arrow-green)"/>
+  <path d="M350 475 L350 335" stroke="#b55b13" stroke-width="5" stroke-dasharray="9 7" fill="none" marker-end="url(#arrow-orange)"/>
+  <path d="M330 475 V455 H350" stroke="#405565" stroke-width="2" fill="none"/>
+  <g fill="#172b3a" font-family="Arial, sans-serif" font-size="18" font-weight="700">
+    <text x="225" y="385" fill="#245e9b">u = (3, 2)</text>
+    <text x="158" y="452" fill="#245e9b">v = (1, 0)</text>
+    <text x="205" y="535" fill="#176b54">projᵥ(u) = (3, 0)</text>
+    <text x="360" y="400" fill="#9b4c0d">perpendicular part</text>
+  </g>
+  <rect x="815" y="150" width="330" height="345" rx="14" fill="#f3f8fc" stroke="#52758b" stroke-width="2"/>
+  <text x="845" y="198" fill="#172b3a" font-family="Arial, sans-serif" font-size="22" font-weight="700">Coordinate check</text>
+  <text x="845" y="248" fill="#245e9b" font-family="Arial, sans-serif" font-size="20">u · v = 3</text>
+  <text x="845" y="288" fill="#176b54" font-family="Arial, sans-serif" font-size="20">v · v = 1</text>
+  <path d="M845 313 H1108" stroke="#a8bdc9" stroke-width="2"/>
+  <text x="845" y="357" fill="#172b3a" font-family="Arial, sans-serif" font-size="18">((u · v) / (v · v))v</text>
+  <text x="845" y="405" fill="#176b54" font-family="Arial, sans-serif" font-size="21" font-weight="700">= 3(1, 0) = (3, 0)</text>
+  <text x="845" y="456" fill="#405565" font-family="Arial, sans-serif" font-size="16">The dashed part is perpendicular to v.</text>
+</svg>

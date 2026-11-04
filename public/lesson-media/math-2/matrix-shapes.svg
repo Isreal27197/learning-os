@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title description">
+  <title id="title">Matrix multiplication shape compatibility</title>
+  <desc id="description">A matrix A with shape m by n multiplies a matrix B with shape n by p. The matching inner n dimensions permit multiplication, and the result has shape m by p.</desc>
+  <rect width="1200" height="560" rx="18" fill="#ffffff"/>
+  <text x="54" y="58" fill="#172b3a" font-family="Arial, sans-serif" font-size="30" font-weight="700">Check matrix shapes before multiplying</text>
+  <text x="54" y="94" fill="#405565" font-family="Arial, sans-serif" font-size="19">The inner dimensions must match; the outer dimensions become the result shape.</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="70" y="165" width="250" height="240" rx="12" fill="#f3f8fc" stroke="#52758b" stroke-width="2"/>
+    <text x="195" y="145" text-anchor="middle" fill="#172b3a" font-size="24" font-weight="700">A</text>
+    <text x="195" y="437" text-anchor="middle" fill="#405565" font-size="18">m × n</text>
+    <g fill="#dcecf4" stroke="#8ba9b9" stroke-width="1">
+      <rect x="100" y="195" width="56" height="46"/><rect x="158" y="195" width="56" height="46"/><rect x="216" y="195" width="56" height="46"/>
+      <rect x="100" y="243" width="56" height="46"/><rect x="158" y="243" width="56" height="46"/><rect x="216" y="243" width="56" height="46"/>
+      <rect x="100" y="291" width="56" height="46"/><rect x="158" y="291" width="56" height="46"/><rect x="216" y="291" width="56" height="46"/>
+    </g>
+    <text x="332" y="300" fill="#172b3a" font-size="38" font-weight="700">×</text>
+
+    <rect x="390" y="165" width="250" height="240" rx="12" fill="#f3f8fc" stroke="#52758b" stroke-width="2"/>
+    <text x="515" y="145" text-anchor="middle" fill="#172b3a" font-size="24" font-weight="700">B</text>
+    <text x="515" y="437" text-anchor="middle" fill="#405565" font-size="18">n × p</text>
+    <g fill="#f9e8d1" stroke="#c69a68" stroke-width="1">
+      <rect x="445" y="195" width="62" height="46"/><rect x="509" y="195" width="62" height="46"/>
+      <rect x="445" y="243" width="62" height="46"/><rect x="509" y="243" width="62" height="46"/>
+      <rect x="445" y="291" width="62" height="46"/><rect x="509" y="291" width="62" height="46"/>
+    </g>
+    <text x="652" y="300" fill="#172b3a" font-size="38" font-weight="700">=</text>
+
+    <rect x="710" y="165" width="250" height="240" rx="12" fill="#f3f8fc" stroke="#52758b" stroke-width="2"/>
+    <text x="835" y="145" text-anchor="middle" fill="#172b3a" font-size="24" font-weight="700">AB</text>
+    <text x="835" y="437" text-anchor="middle" fill="#405565" font-size="18">m × p</text>
+    <g fill="#e5f3ed" stroke="#72a892" stroke-width="1">
+      <rect x="775" y="195" width="62" height="46"/><rect x="839" y="195" width="62" height="46"/>
+      <rect x="775" y="243" width="62" height="46"/><rect x="839" y="243" width="62" height="46"/>
+      <rect x="775" y="291" width="62" height="46"/><rect x="839" y="291" width="62" height="46"/>
+    </g>
+  </g>
+  <rect x="1005" y="180" width="145" height="190" rx="12" fill="#fff1df" stroke="#b55b13" stroke-width="2"/>
+  <text x="1077" y="220" text-anchor="middle" fill="#9b4c0d" font-family="Arial, sans-serif" font-size="17" font-weight="700">Inner match</text>
+  <text x="1077" y="268" text-anchor="middle" fill="#172b3a" font-family="Arial, sans-serif" font-size="25">n = n</text>
+  <path d="M1077 286 V320" stroke="#b55b13" stroke-width="3"/>
+  <text x="1077" y="348" text-anchor="middle" fill="#405565" font-family="Arial, sans-serif" font-size="15">required</text>
+  <rect x="70" y="478" width="890" height="48" rx="8" fill="#e5f3ed"/>
+  <text x="92" y="509" fill="#176b54" font-family="Arial, sans-serif" font-size="18" font-weight="700">A(m×n) · B(n×p) → AB(m×p)</text>
+  <text x="490" y="509" fill="#405565" font-family="Arial, sans-serif" font-size="16">Each output entry is one row-by-column dot product.</text>
+</svg>

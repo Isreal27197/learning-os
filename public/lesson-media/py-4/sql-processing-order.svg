@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title description">
+  <title id="title">Written and logical SQL query order</title>
+  <desc id="description">Two numbered lists compare the order clauses are written in SQL with the logical processing order: FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY and LIMIT.</desc>
+  <rect width="1200" height="700" rx="18" fill="#ffffff"/>
+  <text x="54" y="58" fill="#172b3a" font-family="Arial, sans-serif" font-size="30" font-weight="700">Written order is not logical processing order</text>
+  <text x="54" y="91" fill="#405565" font-family="Arial, sans-serif" font-size="18">The database reasons from source rows toward the final result.</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="55" y="125" width="510" height="520" rx="14" fill="#f3f8fc" stroke="#52758b" stroke-width="2"/>
+    <rect x="635" y="125" width="510" height="520" rx="14" fill="#f3f8fc" stroke="#52758b" stroke-width="2"/>
+    <rect x="55" y="125" width="510" height="64" rx="14" fill="#dcecf4"/>
+    <rect x="635" y="125" width="510" height="64" rx="14" fill="#dcecf4"/>
+    <text x="82" y="166" fill="#172b3a" font-size="23" font-weight="700">Written in a query</text>
+    <text x="662" y="166" fill="#172b3a" font-size="23" font-weight="700">Logical processing</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="20" font-weight="700">
+    <g fill="#176b54">
+      <circle cx="105" cy="235" r="20"/><circle cx="105" cy="292" r="20"/><circle cx="105" cy="349" r="20"/>
+      <circle cx="105" cy="406" r="20"/><circle cx="105" cy="463" r="20"/><circle cx="105" cy="520" r="20"/><circle cx="105" cy="577" r="20"/>
+      <circle cx="685" cy="235" r="20"/><circle cx="685" cy="292" r="20"/><circle cx="685" cy="349" r="20"/>
+      <circle cx="685" cy="406" r="20"/><circle cx="685" cy="463" r="20"/><circle cx="685" cy="520" r="20"/><circle cx="685" cy="577" r="20"/>
+    </g>
+    <g fill="#ffffff" text-anchor="middle" font-size="16">
+      <text x="105" y="241">1</text><text x="105" y="298">2</text><text x="105" y="355">3</text>
+      <text x="105" y="412">4</text><text x="105" y="469">5</text><text x="105" y="526">6</text><text x="105" y="583">7</text>
+      <text x="685" y="241">1</text><text x="685" y="298">2</text><text x="685" y="355">3</text>
+      <text x="685" y="412">4</text><text x="685" y="469">5</text><text x="685" y="526">6</text><text x="685" y="583">7</text>
+    </g>
+  </g>
+  <g fill="#172b3a" font-family="Arial, sans-serif" font-size="21">
+    <text x="145" y="242">SELECT</text><text x="145" y="299">FROM</text><text x="145" y="356">WHERE</text>
+    <text x="145" y="413">GROUP BY</text><text x="145" y="470">HAVING</text><text x="145" y="527">ORDER BY</text><text x="145" y="584">LIMIT</text>
+    <text x="725" y="242">FROM (source rows)</text><text x="725" y="299">WHERE (filter rows)</text>
+    <text x="725" y="356">GROUP BY (make groups)</text><text x="725" y="413">HAVING (filter groups)</text>
+    <text x="725" y="470">SELECT (choose output)</text><text x="725" y="527">ORDER BY (sort)</text><text x="725" y="584">LIMIT (cap results)</text>
+  </g>
+  <text x="55" y="675" fill="#405565" font-family="Arial, sans-serif" font-size="16">Logical order is a reasoning model; the query planner may execute operations differently.</text>
+</svg>
