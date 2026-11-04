@@ -186,3 +186,5 @@ This is an evolving learning environment. Curriculum content, projects, and capa
 ---
 
 **Learning OS — Learn deliberately. Build consistently. Keep evidence of progress.**
+
+https://learning-os-isreal.netlify.app/
