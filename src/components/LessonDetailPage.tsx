@@ -7,12 +7,12 @@ import type {
   ContentSection,
   CurriculumExercise,
   CurriculumResource,
-  CurriculumStage,
   Lesson,
   LessonMedia,
   LessonMiniBuild,
   WorkedExample,
 } from '../data';
+import type { CurriculumOutlineLesson, CurriculumOutlineStage } from '../curriculum/outlineTypes';
 import type {
   ExerciseAttempt,
   ExerciseAttemptStatus,
@@ -25,10 +25,10 @@ import type { SaveResult } from '../lib/storage';
 
 type LessonDetailPageProps = {
   lesson: Lesson | null;
-  stage?: CurriculumStage;
+  stage?: CurriculumOutlineStage;
   completed: boolean;
-  previousLesson?: Lesson;
-  nextLesson?: Lesson;
+  previousLesson?: CurriculumOutlineLesson;
+  nextLesson?: CurriculumOutlineLesson;
   onBack: () => void;
   onOpenLesson: (lessonId: string) => void;
   onToggleCompletion: () => void;

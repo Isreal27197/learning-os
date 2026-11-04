@@ -16,8 +16,9 @@ import {
   Target,
   Trash2,
 } from 'lucide-react';
-import { stages, starterGoals } from './data';
+import { stages, starterGoals, type Lesson } from './data';
 import { curriculumOutline } from './curriculum/outline.generated';
+import { loadLesson, prefetchLesson } from './curriculum/loadLesson';
 import { hasSupabase, supabase } from './lib/supabase';
 import { calculateLearningProgress } from './lib/learningProgress';
 import {
@@ -92,6 +93,9 @@ export default function App() {
   );
   const [labActivityTarget, setLabActivityTarget] = useState<string | undefined>();
   const [labResumeAttemptId, setLabResumeAttemptId] = useState<string | undefined>();
+  const [loadedLesson, setLoadedLesson] = useState<Lesson | null>(null);
+  const [lessonLoadError, setLessonLoadError] = useState<string | null>(null);
+  const [lessonRetry, setLessonRetry] = useState(0);
   const [page, setPage] = useState<PageId>(() =>
     lessonIdFromHash(window.location.hash) !== null ? 'lessonDetail' : 'dashboard',
   );
@@ -298,10 +302,47 @@ export default function App() {
     () => curriculumOutline.flatMap((stage) => stage.lessons),
     [],
   );
-  const selectedLesson = curriculumLessons.find(({ lesson }) => lesson.id === selectedLessonId);
-  const selectedLessonIndex = selectedLesson
-    ? curriculumLessons.findIndex(({ lesson }) => lesson.id === selectedLesson.lesson.id)
+  const selectedLessonMetadata = curriculumLessons.find(
+    ({ lesson }) => lesson.id === selectedLessonId,
+  );
+  const selectedLessonIndex = selectedLessonMetadata
+    ? curriculumLessons.findIndex(({ lesson }) => lesson.id === selectedLessonMetadata.lesson.id)
     : -1;
+  const selectedLesson =
+    selectedLessonMetadata && loadedLesson?.id === selectedLessonId
+      ? { stage: selectedLessonMetadata.stage, lesson: loadedLesson }
+      : undefined;
+  const selectedLessonOutline = selectedLessonId
+    ? curriculumLessonOutline.find((lesson) => lesson.id === selectedLessonId)
+    : undefined;
+  const selectedStageOutline = selectedLessonId
+    ? curriculumOutline.find((stage) =>
+        stage.lessons.some((lesson) => lesson.id === selectedLessonId),
+      )
+    : undefined;
+  useEffect(() => {
+    if (!selectedLessonId || !selectedLessonOutline) {
+      setLoadedLesson(null);
+      setLessonLoadError(null);
+      return;
+    }
+
+    let active = true;
+    setLoadedLesson(null);
+    setLessonLoadError(null);
+    loadLesson(selectedLessonId)
+      .then((lesson) => {
+        if (active) setLoadedLesson(lesson);
+      })
+      .catch((error: unknown) => {
+        if (active) {
+          setLessonLoadError(error instanceof Error ? error.message : String(error));
+        }
+      });
+    return () => {
+      active = false;
+    };
+  }, [selectedLessonId, selectedLessonOutline, lessonRetry]);
   const openLesson = (lessonId: string, activityTarget?: string, attemptId?: string) => {
     const encodedId = encodeURIComponent(lessonId);
     window.history.pushState(
@@ -322,7 +363,7 @@ export default function App() {
   };
   const openStudyClock = (plannedTopic?: string) => {
     if (!activeSessionRef.current) {
-      setTopic(plannedTopic ?? selectedLesson?.lesson.title ?? topic);
+      setTopic(plannedTopic ?? selectedLessonMetadata?.lesson.title ?? topic);
     }
     navigateToPage('studyClock');
   };
@@ -451,7 +492,7 @@ export default function App() {
   const currentView = pageDefinition.view;
   const pageTitle =
     currentView === 'lessonDetail'
-      ? (selectedLesson?.lesson.title ?? (selectedLessonId ? 'Lesson not found' : 'Lesson'))
+      ? (selectedLessonOutline?.title ?? (selectedLessonId ? 'Lesson not found' : 'Lesson'))
       : pageDefinition.title;
   const loadIssue = <T,>(key: StorageKey, result: LoadResult<T>): string[] =>
     result.canSave
@@ -639,7 +680,13 @@ export default function App() {
               </div>
               <div className="lessonlist">
                 {s.lessons.map((l) => (
-                  <button className="lesson" key={l.id} onClick={() => openLesson(l.id)}>
+                  <button
+                    className="lesson"
+                    key={l.id}
+                    onClick={() => openLesson(l.id)}
+                    onMouseEnter={() => prefetchLesson(l.id)}
+                    onFocus={() => prefetchLesson(l.id)}
+                  >
                     <span className={completed.includes(l.id) ? 'check done' : 'check'}>
                       {completed.includes(l.id) ? <Check size={14} /> : null}
                     </span>
@@ -659,7 +706,7 @@ export default function App() {
       )}
       {currentView === 'studio' && (
         <LabWorkspacePage
-          stages={stages}
+          outline={curriculumOutline}
           attempts={attempts}
           checkpoints={checkpoints}
           attemptStorageError={
@@ -725,24 +772,55 @@ export default function App() {
           onOpenProject={openProject}
         />
       )}
-      {currentView === 'lessonDetail' && (
+      {currentView === 'lessonDetail' &&
+        selectedLessonMetadata &&
+        !selectedLesson &&
+        !lessonLoadError && (
+          <section className="panel lesson-load-state" role="status" aria-live="polite">
+            <div className="eyebrow">LOADING LESSON</div>
+            <h2>{selectedLessonMetadata.lesson.title}</h2>
+            <p>Loading lesson content…</p>
+          </section>
+        )}
+      {currentView === 'lessonDetail' && selectedLessonMetadata && lessonLoadError && (
+        <section className="panel lesson-load-error" role="alert">
+          <div className="eyebrow">LESSON COULD NOT BE LOADED</div>
+          <h2>{selectedLessonMetadata.lesson.title}</h2>
+          <p>{lessonLoadError}</p>
+          <div className="lesson-detail-toolbar">
+            <button
+              className="primary"
+              type="button"
+              onClick={() => setLessonRetry((value) => value + 1)}
+            >
+              Try again
+            </button>
+            <button className="outline" type="button" onClick={() => navigateToPage('roadmap')}>
+              Back to Roadmap
+            </button>
+          </div>
+        </section>
+      )}
+      {currentView === 'lessonDetail' && (selectedLesson || !selectedLessonMetadata) && (
         <LessonDetailPage
           lesson={selectedLesson?.lesson ?? null}
-          stage={selectedLesson?.stage}
-          completed={Boolean(selectedLesson && completed.includes(selectedLesson.lesson.id))}
+          stage={selectedStageOutline}
+          completed={Boolean(
+            selectedLessonMetadata && completed.includes(selectedLessonMetadata.lesson.id),
+          )}
           previousLesson={
-            selectedLessonIndex > 0 ? curriculumLessons[selectedLessonIndex - 1].lesson : undefined
+            selectedLessonIndex > 0 ? curriculumLessonOutline[selectedLessonIndex - 1] : undefined
           }
           nextLesson={
             selectedLessonIndex >= 0 && selectedLessonIndex < curriculumLessons.length - 1
-              ? curriculumLessons[selectedLessonIndex + 1].lesson
+              ? curriculumLessonOutline[selectedLessonIndex + 1]
               : undefined
           }
           onBack={() => navigateToPage('roadmap')}
           onOpenLesson={openLesson}
           onToggleCompletion={() => {
-            if (!selectedLesson) return;
-            const lessonId = selectedLesson.lesson.id;
+            if (!selectedLessonMetadata) return;
+            const lessonId = selectedLessonMetadata.lesson.id;
             setCompleted((records) =>
               records.includes(lessonId)
                 ? records.filter((id) => id !== lessonId)
@@ -753,11 +831,13 @@ export default function App() {
           labActivityTarget={labActivityTarget}
           resumeAttemptId={labResumeAttemptId}
           checkpoints={checkpoints.filter(
-            (record) => record.lessonId === selectedLesson?.lesson.id,
+            (record) => record.lessonId === selectedLessonMetadata?.lesson.id,
           )}
-          attempts={attempts.filter((record) => record.lessonId === selectedLesson?.lesson.id)}
+          attempts={attempts.filter(
+            (record) => record.lessonId === selectedLessonMetadata?.lesson.id,
+          )}
           learningNotes={learningNotes.filter(
-            (record) => record.lessonId === selectedLesson?.lesson.id,
+            (record) => record.lessonId === selectedLessonMetadata?.lesson.id,
           )}
           learningRecordStorage={{
             checkpoints: {

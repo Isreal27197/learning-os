@@ -1,0 +1,183 @@
+{
+  "capture": {
+    "commit": "e79611665ad876732112440c5405e8a9c57d9625",
+    "source": "git show HEAD:src/data.ts; TypeScript transpileModule CommonJS ES2020; evaluate in Node VM; recursively sort object keys and preserve array order in canonical JSON; SHA-256 per complete lesson object."
+  },
+  "lessonCount": 29,
+  "lessons": [
+    {
+      "id": "py-1",
+      "title": "Python fundamentals and problem solving",
+      "stage": "Python & Computing Foundations",
+      "sha256": "1c1dec0c1de589368ae044c7e1bd7674e63fd645077e925b4bfa0e70641088ff"
+    },
+    {
+      "id": "py-2",
+      "title": "Files, exceptions and modules",
+      "stage": "Python & Computing Foundations",
+      "sha256": "eafc42a8cb8d2d75def70d0308f2ae53b7d4a572932e4b515343051a171c1f68"
+    },
+    {
+      "id": "py-3",
+      "title": "Git, Terminal and Linux Basics",
+      "stage": "Python & Computing Foundations",
+      "sha256": "433846730d0a861a75c4a2115cf5d008c08e3c6654bf48df464192b2abcdeb1f"
+    },
+    {
+      "id": "py-4",
+      "title": "SQL and Data Handling",
+      "stage": "Python & Computing Foundations",
+      "sha256": "7fdd4af12d10a55ed2427618b181b66d6f956c17affcf329846a9fa27737f6d9"
+    },
+    {
+      "id": "math-1",
+      "title": "Functions, sets and notation",
+      "stage": "Mathematics for ML",
+      "sha256": "de178df1f82f28644d118fc5294dda49e90b96c6511d3c2a6b280fbe1c509f3e"
+    },
+    {
+      "id": "math-2",
+      "title": "Linear algebra for data",
+      "stage": "Mathematics for ML",
+      "sha256": "6599ad3428bd3ff4fae1cec1747e8526e51478d995576e586f1a5c163be19fb5"
+    },
+    {
+      "id": "math-3",
+      "title": "Calculus and gradients",
+      "stage": "Mathematics for ML",
+      "sha256": "9fdb050c2aeab11215fa6eccefd87717fae95f8c8389b937f97c6b94268e546a"
+    },
+    {
+      "id": "math-4",
+      "title": "Probability and statistics",
+      "stage": "Mathematics for ML",
+      "sha256": "cf39d87e330678b29a301daeca13035443af8697948fca62ebd64dc8e6253867"
+    },
+    {
+      "id": "ml-1",
+      "title": "Data investigation and feature engineering",
+      "stage": "Classical Machine Learning",
+      "sha256": "224757317ff518d49bdc31c2914debe8f093d0c8801bddaeb4b2e18ee917452c"
+    },
+    {
+      "id": "ml-2",
+      "title": "Supervised learning",
+      "stage": "Classical Machine Learning",
+      "sha256": "830dea6df19a52ef86e64f9bb6adfe0e175f5640d01c734be228a411a4464ae2"
+    },
+    {
+      "id": "ml-3",
+      "title": "Unsupervised learning and dimensionality reduction",
+      "stage": "Classical Machine Learning",
+      "sha256": "caf63515b605ba84f23c39379015a9c65c469ff86337a8a0a3a69b2b9a5696f8"
+    },
+    {
+      "id": "dl-1",
+      "title": "Tensors and PyTorch workflow",
+      "stage": "Deep Learning & PyTorch",
+      "sha256": "8bef92c4f63f1656f9b0d5694c94dfeadac7340ec039c893457fc1b5af3d0cbe"
+    },
+    {
+      "id": "dl-2",
+      "title": "Neural networks from scratch",
+      "stage": "Deep Learning & PyTorch",
+      "sha256": "9b1c1829cf3dc35c4538d4f2664ce4bce0dbe5f0b5be1ace100ad9811ce7fbe6"
+    },
+    {
+      "id": "dl-3",
+      "title": "CNNs and practical deep learning",
+      "stage": "Deep Learning & PyTorch",
+      "sha256": "2325850fc5c98b4ba1a666344b1a87f49a827ff1f6bcca0c437469d22c975fdd"
+    },
+    {
+      "id": "dl-4",
+      "title": "Attention and transformers",
+      "stage": "Deep Learning & PyTorch",
+      "sha256": "70934b2aa60c6d974df367d4168c5342b11385d821fc2b6bf7aa9c94debe282d"
+    },
+    {
+      "id": "ops-1",
+      "title": "Python software engineering",
+      "stage": "Software Engineering & MLOps",
+      "sha256": "af468259dae6b84d2adb88f7e25cc819517524f8f3be96e13744812b8283cc7a"
+    },
+    {
+      "id": "ops-2",
+      "title": "APIs, FastAPI and Docker",
+      "stage": "Software Engineering & MLOps",
+      "sha256": "06131297471bb78ded0113bd5f354e85fcce250b0a208db158674b22ca9faf99"
+    },
+    {
+      "id": "ops-3",
+      "title": "MLflow, CI/CD and monitoring",
+      "stage": "Software Engineering & MLOps",
+      "sha256": "db46be54bf9bf583120e97a8dcc4179c0cb59d70860687023a674bc8e6a80e07"
+    },
+    {
+      "id": "ops-4",
+      "title": "Cloud deployment foundations",
+      "stage": "Software Engineering & MLOps",
+      "sha256": "af610c023bf1118c2a5e38f237f022dc1ad790a2ba2932d71be7606fc43cd6e5"
+    },
+    {
+      "id": "sys-1",
+      "title": "Operating systems and networking",
+      "stage": "Systems & Distributed Computing",
+      "sha256": "27acbdafa4d73f65a82830c24261c3b5934a069185bb99869662eddd499af567"
+    },
+    {
+      "id": "sys-2",
+      "title": "Databases, caching and queues",
+      "stage": "Systems & Distributed Computing",
+      "sha256": "ac2cf6b8a4e6e12818f902b363cc104a7bec7807f92bf33922c29dfdf22a81a3"
+    },
+    {
+      "id": "sys-3",
+      "title": "Distributed systems foundations",
+      "stage": "Systems & Distributed Computing",
+      "sha256": "cc47d28d04d91a0e659e4ef14fffbc35bddc2f4da419d075ee8eb05a8c803d57"
+    },
+    {
+      "id": "sys-4",
+      "title": "System design for ML services",
+      "stage": "Systems & Distributed Computing",
+      "sha256": "21d4cca45274525325a593934e92db19d6164917f4c063148786c948c18bc8a1"
+    },
+    {
+      "id": "inf-1",
+      "title": "Run and inspect your first open LLM",
+      "stage": "Inference Engineering & AI Infrastructure",
+      "sha256": "928b3919b627bb6944fc1c749f3b6d0488b491f7c98319f4a46e465881248a51"
+    },
+    {
+      "id": "inf-2",
+      "title": "Prefill, decode and KV cache",
+      "stage": "Inference Engineering & AI Infrastructure",
+      "sha256": "176b7423ad3c5d5f17067b30dd67ecf2cecb6c953725db9d04d6c292410b01dc"
+    },
+    {
+      "id": "inf-3",
+      "title": "Benchmark inference correctly",
+      "stage": "Inference Engineering & AI Infrastructure",
+      "sha256": "d104d6db819f8e9e1518935a8df20ded29a222f019f5c5965087d6bb2eff3bb4"
+    },
+    {
+      "id": "inf-4",
+      "title": "Serving engines and continuous batching",
+      "stage": "Inference Engineering & AI Infrastructure",
+      "sha256": "e85dc8fe29a1456c678ae9bc89e7d8f595c4b2c70530a8c6832ee9b0cea2306a"
+    },
+    {
+      "id": "inf-5",
+      "title": "Quantization, profiling and optimization",
+      "stage": "Inference Engineering & AI Infrastructure",
+      "sha256": "13b030547344fdd291036a6f312224c3efec20d55ff557321e02731b57d7cdce"
+    },
+    {
+      "id": "inf-6",
+      "title": "Production inference capstone",
+      "stage": "Inference Engineering & AI Infrastructure",
+      "sha256": "720eb27eaa1ad3fe9aac6416b8721d0e8cc2fa510511fa78c79c2ce7c9df78aa"
+    }
+  ]
+}

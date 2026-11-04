@@ -1,6 +1,8 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { BookOpen, Clock3, FolderKanban, Play, RotateCcw } from 'lucide-react';
 import type { CurriculumStage, Lesson, LessonMiniBuild } from '../data';
+import type { CurriculumOutlineStage } from '../curriculum/outlineTypes';
+import { loadLesson } from '../curriculum/loadLesson';
 import type {
   ExerciseAttempt,
   ExerciseAttemptStatus,
@@ -51,7 +53,7 @@ function checkpointLabel(status: UnderstandingStatus) {
 }
 
 export default function LabWorkspacePage({
-  stages,
+  outline,
   attempts,
   checkpoints,
   attemptStorageError,
@@ -61,7 +63,7 @@ export default function LabWorkspacePage({
   onOpenProject,
   onOpenClock,
 }: {
-  stages: CurriculumStage[];
+  outline: readonly CurriculumOutlineStage[];
   attempts: ExerciseAttempt[];
   checkpoints: LearningCheckpoint[];
   attemptStorageError?: string;
@@ -72,6 +74,30 @@ export default function LabWorkspacePage({
   onOpenClock: (topic?: string) => void;
 }) {
   const [filter, setFilter] = useState<LabFilter>('all');
+  const [loadedStages, setLoadedStages] = useState<CurriculumStage[] | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [retry, setRetry] = useState(0);
+  useEffect(() => {
+    let active = true;
+    setLoadedStages(null);
+    setLoadError(null);
+    Promise.all(
+      outline.map(async (stage) => ({
+        ...stage,
+        lessons: await Promise.all(stage.lessons.map((lesson) => loadLesson(lesson.id))),
+      })),
+    )
+      .then((nextStages) => {
+        if (active) setLoadedStages(nextStages);
+      })
+      .catch((error: unknown) => {
+        if (active) setLoadError(error instanceof Error ? error.message : String(error));
+      });
+    return () => {
+      active = false;
+    };
+  }, [outline, retry]);
+  const stages = loadedStages ?? [];
   const latestAttempts = useMemo(() => latestByExercise(attempts), [attempts]);
   const activities = useMemo<Activity[]>(
     () =>
@@ -140,6 +166,26 @@ export default function LabWorkspacePage({
     onOpenActivity(attempt.lessonId, attempt.exerciseId, attempt.id);
   const openCheckpoint = (checkpoint: LearningCheckpoint) =>
     onOpenCheckpoint(checkpoint.lessonId, checkpoint.id);
+
+  if (loadError) {
+    return (
+      <section className="panel" role="alert">
+        <div className="eyebrow">LAB ACTIVITIES COULD NOT BE LOADED</div>
+        <p>{loadError}</p>
+        <button className="primary" type="button" onClick={() => setRetry((value) => value + 1)}>
+          Try again
+        </button>
+      </section>
+    );
+  }
+  if (!loadedStages) {
+    return (
+      <section className="panel" role="status" aria-live="polite">
+        <div className="eyebrow">LOADING LAB ACTIVITIES</div>
+        <p>Loading exercises and mini-builds…</p>
+      </section>
+    );
+  }
 
   return (
     <div className="lab-workspace">

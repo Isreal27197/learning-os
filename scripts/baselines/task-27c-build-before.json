@@ -1,0 +1,24 @@
+{
+  "capture": {
+    "command": "npm run build; measured emitted dist/assets files immediately after a successful production build using filesystem byte lengths and gzipSync bytes."
+  },
+  "html": {
+    "file": "dist/index.html",
+    "bytes": 446,
+    "gzipBytes": 287
+  },
+  "assets": [
+    {
+      "file": "dist/assets/index-CDJOQQwN.js",
+      "bytes": 839247,
+      "gzipBytes": 235872
+    },
+    {
+      "file": "dist/assets/index-wPOwlAdu.css",
+      "bytes": 58254,
+      "gzipBytes": 10843
+    }
+  ],
+  "totalJavaScriptBytes": 839247,
+  "totalJavaScriptGzipBytes": 235872
+}
